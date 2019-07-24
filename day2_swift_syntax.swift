@@ -48,7 +48,7 @@ func myFunction(parameter: String)
     print(parameter)
 }
 print(parameter) // ERROR: parameter is not a valid variable outside of the function definition
-myFunction(parameter: "Hello, World!")
+myFunction(parameter: "Hello, World!") // prints: Hello, World!
 print(parameter) // ERROR: parameter is not a valid variable outside of the function definition
 
 
