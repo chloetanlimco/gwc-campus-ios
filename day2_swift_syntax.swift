@@ -48,7 +48,7 @@ func myFunction(parameter: String)
     print(parameter)
 }
 print(parameter) // ERROR: parameter is not a valid variable outside of the function definition
-myFunction("Hello, World!")
+myFunction(parameter: "Hello, World!")
 print(parameter) // ERROR: parameter is not a valid variable outside of the function definition
 
 
@@ -96,7 +96,7 @@ class myClass {
     }
 }
 
-// create an object/instance of the class a.k.a. using a class
+// create an object/instance of the class a.k.a. using a class as a template
 var myObject = myClass(firstVariable: 4, myOtherVar: 3) // myObject.myVar = 4, myObject.myOtherVar = 3
 myMemberFunction() // ERROR: this cannot run without being connected to an object
 myObject.myMemberFunction() // updates myObject.myVar from 4 to 10
