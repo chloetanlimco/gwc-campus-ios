@@ -109,3 +109,41 @@ myObject.printVars() // prints: myVar: 16
                             //  myOtherVar: 3
 
 /* --------------------------------------------------------------------------------------------------------- */
+/* INHERITANCE */
+
+// This is why you'll have things like override func viewDidLoad().
+// Your current ViewController class inherits from UIViewController,
+// and the UIViewController class has its own viewDidLoad() function.
+
+class myParentClass {
+    func myFunction() {
+        print("I'm the parent class!")
+    }
+    func myOtherFunction() {
+        print("I get inherited.")
+    }
+}
+class myClass: myParentClass {
+    override func myFunction() {
+        print("I'm the child class!")
+    }
+    func myOwnFunction() {
+        print("I'm not inherited.")
+    }
+}
+
+let instanceOfParentClass = myParentClass()
+let instanceOfChildClass = myClass()
+instanceOfParentClass.myFunction() // prints: I'm the parent class!
+instanceOfChildClass.myFunction() // prints: I'm the child class!
+
+// notice that these two print the same thing, and this function does not have to be redefined in the child class
+// for the child class to use it
+instanceOfParentClass.myOtherFunction() // prints: I get inherited.
+instanceOfChildClass.myOtherFunction() // prints: I get inherited.
+
+// notice the difference between the following and the above
+instanceOfParentClass.myOwnFunction() // ERROR: the parent class does not have anything that the child class has
+instanceOfChildClass.myOwnFunction() // prints: I'm not inherited.
+
+/* --------------------------------------------------------------------------------------------------------- */
