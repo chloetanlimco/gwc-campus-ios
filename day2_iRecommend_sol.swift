@@ -80,4 +80,3 @@ class ViewController2: UIViewController {
         setUpScreen()
     }
 }
-
